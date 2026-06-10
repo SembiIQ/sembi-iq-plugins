@@ -1,0 +1,8 @@
+{
+  "name": "sembi-iq",
+  "owner": { "name": "SembiIQ" },
+  "plugins": [
+    { "name": "testmo",   "source": "./plugins/testmo",   "description": "Testmo spec-implementer & change-evaluator skills + read-only subagent." },
+    { "name": "testrail", "source": "./plugins/testrail", "description": "TestRail spec-implementer & change-evaluator skills + read-only subagent." }
+  ]
+}
