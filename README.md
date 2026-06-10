@@ -56,9 +56,14 @@ This repo is its own plugin marketplace (named `sembi-iq`). Add it, then install
 /reload-plugins
 ```
 
-### Claude Apps (web, Claude Desktop, Cowork)
+### Claude Desktop (Chat, Cowork, Code)
 
-In the **Claude apps** (web, Claude Desktop, Cowork), add the `SembiIQ/sembi-iq-plugins` marketplace and install `testrail` or `testmo` from the **Customize → Plugins** menu (or claude.ai settings).
+In **Claude Desktop**:
+
+1. Open the **Customize** menu and go to the **Plugins** tab.
+2. In the **Personal plugins** section, click the **+** button, then choose **Add marketplace**.
+3. Paste the marketplace source — `SembiIQ/sembi-iq-plugins` — and **Sync**.
+4. Once it syncs, browse the catalog and click **Install** on `testrail` or `testmo`. Installed plugins activate automatically.
 
 ## Usage
 
