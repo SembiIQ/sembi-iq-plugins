@@ -1,6 +1,6 @@
 # Sembi IQ — Claude plugins
 
-[Claude plugins](https://claude.com/plugins) for the [Testmo](https://www.testmo.com/) and [TestRail](https://www.testrail.com/) test-management platforms. They install in **[Claude Code](https://claude.com/product/claude-code)** and in the **Claude apps** (web chat, the Chat tab in Claude Desktop, and Claude Cowork) — with some differences noted under [usage](#usage).
+[Claude plugins](https://claude.com/plugins) for the [TestRail](https://www.testrail.com/) and [Testmo](https://www.testmo.com/) test-management platforms. They install in **[Claude Code](https://claude.com/product/claude-code)** and in the **Claude apps** (web chat, the Chat tab in Claude Desktop, and Claude Cowork) — with some differences noted under [usage](#usage).
 
 Each plugin adds two test-driven workflows, backed by the TestRail or Testmo MCP server:
 
@@ -13,7 +13,7 @@ These plugins target Claude (Claude Code and the Claude apps — Desktop, web ch
 
 ## Prerequisite — connect the Sembi MCP server
 
-The plugins provide the skills and subagent but **do not bundle the required MCP server connection.** You connect the Sembi MCP server yourself, and the connection **must be named `testmo` or `testrail`**.
+The plugins provide the skills and subagent but **do not bundle the required MCP server connection.** You connect to the remote Sembi MCP server yourself, and the connection **must be named `testmo` or `testrail`**.
 
 **For TestRail**, follow the MCP connection steps at: [https://testrail.sembi.com/](https://testrail.sembi.com/)
 
@@ -26,7 +26,9 @@ The plugins provide the skills and subagent but **do not bundle the required MCP
 
 ### Claude Code
 
-This repo is its own plugin marketplace (named `sembi-iq`). Add it, then install whichever test management product you use:
+This repo is its own plugin marketplace (named `sembi-iq`). Add it, then install whichever test management product you use.
+
+#### TestRail
 
 **For TestRail**, from within a Claude Code session, run these three commands:
 
@@ -41,6 +43,8 @@ This repo is its own plugin marketplace (named `sembi-iq`). Add it, then install
 ```
 /reload-plugins
 ```
+
+#### Testmo
 
 **For Testmo**, from within a Claude Code session, run these three commands:
 
