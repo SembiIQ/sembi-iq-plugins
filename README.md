@@ -4,7 +4,7 @@
 
 Each plugin adds test-driven workflows, backed by the TestRail, Testmo, or Xray MCP server:
 
-- **`spec-implementer`** — implement a feature whose acceptance criteria already exist as test cases. Reads the live cases and writes code that satisfies every one.
+- **`spec-implementer`** — implement a new feature and ensure it doesn't break the expected behavior of existing features. Reads the live test cases and writes code that satisfies every one.
 - **`change-evaluator`** — predict whether recent code changes will make test cases pass or fail, before running the suite.
 - **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm. In the `testrail` and `testmo` plugins only.
 
