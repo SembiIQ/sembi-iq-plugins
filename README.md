@@ -5,12 +5,13 @@
 Each plugin adds test-driven workflows, backed by the TestRail, Testmo, or Xray MCP server:
 
 - **`spec-implementer`** — implement a feature whose acceptance criteria already exist as test cases. Reads the live cases and writes code that satisfies every one.
+- **`regression-preventer`** — guard new or in-progress code against breaking behavior that existing test cases already protect. Works out what the change can reach, reads the cases guarding it, and presents a guard rail brief for your confirmation before writing or repairing any code. In the `xray` plugin only.
 - **`change-evaluator`** — predict whether recent code changes will make test cases pass or fail, before running the suite.
 - **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm. In the `testrail` and `testmo` plugins only.
 
 ## Non-Claude agents
 
-These plugins target Claude (Claude Code and the Claude apps — Desktop, web chat, Cowork). For other agents and tools, the same two workflows are published as [agentskills.io](https://agentskills.io/specification) skills in [`sembi-iq-skills`](https://github.com/SembiIQ/sembi-iq-skills).
+These plugins target Claude (Claude Code and the Claude apps — Desktop, web chat, Cowork). For other agents and tools, the same workflows are published as [agentskills.io](https://agentskills.io/specification) skills in [`sembi-iq-skills`](https://github.com/SembiIQ/sembi-iq-skills).
 
 ## Prerequisite — connect the Sembi MCP server
 
@@ -25,7 +26,7 @@ The plugins provide the skills and subagent but **do not bundle the required MCP
 > [!IMPORTANT]
 > If the MCP server isn't connected (or is connected under a different name), the skills will reference tools that aren't available.
 
-The `spec-implementer` and `change-evaluator` skills only read, so a read-only connection is enough for them. The **`import` skill creates cases and folders**, so it needs a connection with write access.
+The `spec-implementer`, `regression-preventer`, and `change-evaluator` skills only read, so a read-only connection is enough for them. The **`import` skill creates cases and folders**, so it needs a connection with write access.
 
 ## Prerequisite — Python, for Excel and CSV imports only
 
@@ -33,7 +34,7 @@ The `import` skill needs a Python interpreter on the `PATH` **when importing Exc
 
 No packages and no virtual environment are needed — `.xlsx` and `.csv` are read with the standard library alone. Legacy `.xls` is the one exception, needing the pure-Python `xlrd` package, which the skill installs only if and when an `.xls` source actually appears.
 
-The `spec-implementer` and `change-evaluator` skills need no Python at all.
+The `spec-implementer`, `regression-preventer`, and `change-evaluator` skills need no Python at all.
 
 ## Installation
 
@@ -128,9 +129,10 @@ In addition, the `testmo:change-evaluator-isolated` subagent is automatically in
 
 ### Xray
 
-| Trigger                  | What it does                                    |
-|--------------------------|-------------------------------------------------|
-| `/xray:spec-implementer` | Implement a feature from Xray Tests             |
-| `/xray:change-evaluator` | Predict pass/fail of Xray Tests for recent changes |
+| Trigger                      | What it does                                       |
+|------------------------------|----------------------------------------------------|
+| `/xray:spec-implementer`     | Implement a feature from Xray Tests                |
+| `/xray:regression-preventer` | Guard changes against breaking existing Xray Tests |
+| `/xray:change-evaluator`     | Predict pass/fail of Xray Tests for recent changes |
 
 In addition, the `xray:change-evaluator-isolated` subagent is automatically invoked by the agent (or invoked by you, by name) when you want the evaluation sandboxed, in the background, in its own context, with a guaranteed read-only toolset. This isolated, background subagent is Claude Code and Claude Cowork specific and does not work in Claude chat on the web or desktop.
