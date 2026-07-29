@@ -5,7 +5,7 @@
 Each plugin adds test-driven workflows, backed by the TestRail, Testmo, or Xray MCP server:
 
 - **`spec-implementer`** — implement a feature whose acceptance criteria already exist as test cases. Reads the live cases and writes code that satisfies every one.
-- **`regression-preventer`** — guard new or in-progress code against breaking behavior that existing test cases already protect. Works out what the change can reach, reads the cases guarding it, and presents a guard rail brief for your confirmation before writing or repairing any code. In the `xray` plugin only.
+- **`regression-preventer`** — guard new or in-progress code against breaking behavior that existing test cases already protect. Works out what the change can reach, reads the cases guarding it, and presents a guard rail brief for your confirmation before writing or repairing any code.
 - **`change-evaluator`** — predict whether recent code changes will make test cases pass or fail, before running the suite.
 - **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm. In the `testrail` and `testmo` plugins only.
 
@@ -105,11 +105,12 @@ Skills can be invoked by their slash command or they can be auto-activated by th
 
 ### TestRail
 
-| Trigger                      | What it does                                           |
-|------------------------------|--------------------------------------------------------|
-| `/testrail:spec-implementer` | Implement a feature from TestRail test cases           |
-| `/testrail:change-evaluator` | Predict pass/fail of TestRail cases for recent changes |
-| `/testrail:import`           | Import test cases from a source file into TestRail     |
+| Trigger                          | What it does                                               |
+|----------------------------------|------------------------------------------------------------|
+| `/testrail:spec-implementer`     | Implement a feature from TestRail test cases               |
+| `/testrail:regression-preventer` | Guard changes against breaking existing TestRail cases     |
+| `/testrail:change-evaluator`     | Predict pass/fail of TestRail cases for recent changes     |
+| `/testrail:import`               | Import test cases from a source file into TestRail         |
 
 `/testrail:import` takes optional hints — `/testrail:import [source-file] [project] [section] [template]`. Most imports pass none; the skill finds the source and asks for the project. Hints are matched loosely (a partial or slightly misspelled name is enough) and confirmed before use, so their order does not matter.
 
@@ -117,11 +118,12 @@ In addition, the `testrail:change-evaluator-isolated` subagent is automatically 
 
 ### Testmo
 
-| Trigger                    | What it does                                         |
-|----------------------------|------------------------------------------------------|
-| `/testmo:spec-implementer` | Implement a feature from Testmo test cases           |
-| `/testmo:change-evaluator` | Predict pass/fail of Testmo cases for recent changes |
-| `/testmo:import`           | Import test cases from a source file into Testmo     |
+| Trigger                        | What it does                                           |
+|--------------------------------|--------------------------------------------------------|
+| `/testmo:spec-implementer`     | Implement a feature from Testmo test cases             |
+| `/testmo:regression-preventer` | Guard changes against breaking existing Testmo cases   |
+| `/testmo:change-evaluator`     | Predict pass/fail of Testmo cases for recent changes   |
+| `/testmo:import`               | Import test cases from a source file into Testmo       |
 
 `/testmo:import` takes optional hints — `/testmo:import [source-file] [project] [folder] [template]`. Most imports pass none; the skill finds the source and asks for the project. Hints are matched loosely (a partial or slightly misspelled name is enough) and confirmed before use, so their order does not matter.
 

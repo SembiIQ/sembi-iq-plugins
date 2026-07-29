@@ -1,1 +1,1 @@
-{ "name": "testrail", "description": "TestRail import, spec-implementer & change-evaluator.", "version": "0.2.0" }
+{ "name": "testrail", "description": "TestRail import, spec-implementer, regression-preventer & change-evaluator.", "version": "0.3.0" }
