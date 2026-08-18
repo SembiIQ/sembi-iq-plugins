@@ -7,7 +7,7 @@ Each plugin adds test-driven workflows, backed by the TestRail, Testmo, or Xray 
 - **`spec-implementer`** — implement a feature whose acceptance criteria already exist as test cases. Reads the live cases and writes code that satisfies every one.
 - **`regression-preventer`** — guard new or in-progress code against breaking behavior that existing test cases already protect. Works out what the change can reach, reads the cases guarding it, and presents a guard rail brief for your confirmation before writing or repairing any code.
 - **`change-evaluator`** — predict whether recent code changes will make test cases pass or fail, before running the suite.
-- **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm. In the `testrail` and `testmo` plugins only.
+- **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm.
 
 ## Non-Claude agents
 
@@ -136,5 +136,8 @@ In addition, the `testmo:change-evaluator-isolated` subagent is automatically in
 | `/xray:spec-implementer`     | Implement a feature from Xray Tests                |
 | `/xray:regression-preventer` | Guard changes against breaking existing Xray Tests |
 | `/xray:change-evaluator`     | Predict pass/fail of Xray Tests for recent changes |
+| `/xray:import`               | Import test cases from a source file into Xray     |
+
+`/xray:import` takes optional hints — `/xray:import [source-file] [project] [folder] [test-type]`. Most imports pass none; the skill finds the source and asks for the project. Hints are matched loosely (a partial or slightly misspelled name is enough) and confirmed before use, so their order does not matter.
 
 In addition, the `xray:change-evaluator-isolated` subagent is automatically invoked by the agent (or invoked by you, by name) when you want the evaluation sandboxed, in the background, in its own context, with a guaranteed read-only toolset. This isolated, background subagent is Claude Code and Claude Cowork specific and does not work in Claude chat on the web or desktop.

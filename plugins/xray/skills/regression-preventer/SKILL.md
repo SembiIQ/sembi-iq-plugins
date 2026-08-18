@@ -256,3 +256,7 @@ When you hit one:
 - **Always fetch live data** from Xray before analyzing or implementing. Never fabricate Test content. If a search returns no Tests for the impact surface, say so plainly in the brief — a surface with no coverage is a finding, not a green light, and the user may want to stop and write Tests first.
 - **Don't paraphrase Test content** into prose interpretations in the brief, the comments, or the report. Quote or summarize faithfully, without rewording in ways that drift from the literal assertion. A contract restated loosely is a contract you will break.
 - **Stop and ask** when the impact surface is unclear, when Tests contradict each other, when a Test's relevance is genuinely ambiguous, or when the change cannot keep a contract. Do not silently pick an interpretation.
+
+---
+
+*xray-regression-preventer v1*

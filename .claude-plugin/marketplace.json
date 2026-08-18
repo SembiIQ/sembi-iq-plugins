@@ -4,6 +4,6 @@
   "plugins": [
     { "name": "testmo",   "source": "./plugins/testmo",   "description": "Testmo import, spec-implementer, regression-preventer & change-evaluator skills + read-only subagent." },
     { "name": "testrail", "source": "./plugins/testrail", "description": "TestRail import, spec-implementer, regression-preventer & change-evaluator skills + read-only subagent." },
-    { "name": "xray",     "source": "./plugins/xray",     "description": "Xray spec-implementer, regression-preventer & change-evaluator skills + read-only subagent." }
+    { "name": "xray",     "source": "./plugins/xray",     "description": "Xray import, spec-implementer, regression-preventer & change-evaluator skills + read-only subagent." }
   ]
 }

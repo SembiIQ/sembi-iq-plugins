@@ -1,1 +1,1 @@
-{ "name": "xray", "description": "Xray spec-implementer, regression-preventer & change-evaluator.", "version": "0.2.0" }
+{ "name": "xray", "description": "Xray import, spec-implementer, regression-preventer & change-evaluator.", "version": "0.4.0" }
