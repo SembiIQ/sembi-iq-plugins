@@ -9,9 +9,6 @@ Each plugin adds test-driven workflows, backed by the TestRail, Testmo, or Xray 
 - **`change-evaluator`** — predict whether recent code changes will make test cases pass or fail, before running the suite.
 - **`import`** — import test cases from a spreadsheet, CSV, Markdown, XML, plaintext, or test code into the platform. Presents what it found for review and writes nothing until you confirm.
 
-> [!IMPORTANT]
-> These plugins and skills are optional resources provided for convenience and are not part of the licensed TestRail, Testmo or Xray products. They are not subject to any master services agreement, support agreement, service-level commitment, warranty or indemnification applicable to those products and are provided “as is” without warranties of any kind. AI-enabled functionality may produce inaccurate, non-deterministic or unexpected results, and users are responsible for reviewing and validating outputs and actions before relying on them. Use of TestRail, Testmo, Xray and any Sembi-hosted services remains subject to the applicable agreement governing those products and services.
-
 ## Non-Claude agents
 
 These plugins target Claude (Claude Code and the Claude apps — Desktop, web chat, Cowork). For other agents and tools, the same workflows are published as [agentskills.io](https://agentskills.io/specification) skills in [`sembi-iq-skills`](https://github.com/SembiIQ/sembi-iq-skills).
@@ -144,3 +141,11 @@ In addition, the `testmo:change-evaluator-isolated` subagent is automatically in
 `/xray:import` takes optional hints — `/xray:import [source-file] [project] [folder] [test-type]`. Most imports pass none; the skill finds the source and asks for the project. Hints are matched loosely (a partial or slightly misspelled name is enough) and confirmed before use, so their order does not matter.
 
 In addition, the `xray:change-evaluator-isolated` subagent is automatically invoked by the agent (or invoked by you, by name) when you want the evaluation sandboxed, in the background, in its own context, with a guaranteed read-only toolset. This isolated, background subagent is Claude Code and Claude Cowork specific and does not work in Claude chat on the web or desktop.
+
+## Support and Disclaimer
+
+These plugins and skills are optional resources provided for convenience and are not part of the licensed TestRail, Testmo or Xray products. They are not subject to any master services agreement, support agreement, service-level commitment, warranty or indemnification applicable to those products and are provided “as is” without warranties of any kind.
+
+AI-enabled functionality may produce inaccurate, non-deterministic or unexpected results, and users are responsible for reviewing and validating outputs and actions before relying on them. Use of TestRail, Testmo, Xray and any Sembi-hosted services remains subject to the applicable agreement governing those products and services.
+
+Claude is a trademark of Anthropic, PBC. These plugins and skills are provided by Sembi and are not affiliated with, sponsored by, or endorsed by Anthropic.
